@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Nunito:wght@300&family=Pacifico&family=Roboto:wght@300&family=Space+Grotesk:wght@500;700&display=swap');
+
+              :root{
+                --blue:#2980b9;
+                --black:#333;
+                --white:#fff;
+                --light-color:#777;
+                --light-bg:#eee;
+                --box-shadow:0 5px 10px rgba(0,0,0,.1);
+              }
+
+              *{
+                font-family: 'Poppins', sans-serif;
+                margin:0; padding:0;
+                box-sizing: border-box;
+                outline: none; border:none;
+                text-decoration: none;
+                text-transform: capitalize;
+                transition: all .2s linear;
+              }
+
+              html::-webkit-scrollbar{
+                width:10px;
+              }
+
+              html::-webkit-scrollbar-track{
+                background: var(--blue);
+              }
+
+              html::-webkit-scrollbar-thumb{
+                background: var(--white);
+                border-radius: 50px;
+              }
+
+              .title {
+                font-size: 25px;
+                color:var(--blue);
+                margin-bottom: 15px;
+              }
+
+              .title a{
+                font-size: 25px;
+                color:var(--blue);
+                margin-bottom: 15px;
+              }
+
+              .btn{
+                margin-top: 10px;
+                display: inline-block;
+                padding:7px 20px;
+                border-radius: 5px;
+                background: var(--blue);
+                color:var(--white);
+                font-size: 17px;
+                box-shadow: var(--box-shadow);
+              }
+
+              .btn:hover{
+                background: var(--black);
+              }
+
+              .container{
+                padding:100px 9%;
+                background: linear-gradient(45deg, rgb(238, 93, 9), var(--blue));
+                display: flex;
+              }
+
+              .container .profile{
+                flex:1 1 400px;
+                background: var(--white);
+                padding:20px 30px;
+                text-align: center;
+                position: sticky;
+                top:20px; left:0;
+                border-right:2px solid var(--black);
+                align-self: flex-start;
+              }
+
+              .container .profile img{
+                height: 150px;
+                width: 150px;
+                border-radius: 50%;
+                border:2px solid var(--black);
+                object-fit: cover;
+                margin-bottom: 10px;
+              }
+
+              .container .profile h3{
+                color:var(--black);
+                font-size: 20px;
+              }
+
+              .container .profile p{
+                color:var(--blue);
+                padding:5px 0;
+                margin-bottom: 10px;
+                font-size: 15px;
+              }
+
+              .container .profile .share{
+                margin:10px 0;
+              }
+
+              .container .profile .share a{
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+                font-size: 20px;
+                border-radius: 50%;
+                color:var(--black);
+                background: var(--light-bg);
+              }
+
+              .container .profile .share a:hover{
+                background: var(--blue);
+                color:var(--white);
+                box-shadow: var(--box-shadow);
+              }
+
+              .container .information{
+                flex:1 1 1000px;
+                background: var(--white);
+                padding:20px 30px;
+              }
+
+              .container .information .about p{
+                font-size: 17px;
+                line-height: 2;
+                padding-bottom: 10px;
+                color:var(--light-color);
+                text-align: justify;
+              }
+
+              .container .information .about .box-container{
+                display: flex;
+                flex-wrap: wrap;
+                gap:15px;
+              }
+
+              .container .information .about .box-container .box{
+                flex:1 1 250px;
+              }
+
+              .container .information .about .box-container .box h3{
+                font-size: 15px;
+                padding:10px 0;
+                color:var(--black);
+              }
+
+              .container .information .about .box-container .box h3 span{
+                color:var(--light-color);
+              }
+
+              .container .information .services{
+                padding:20px 0;
+              }
+
+              .container .information .services .box-container{
+                display: flex;
+                flex-wrap: wrap;
+                gap:15px;
+              }
+
+              .container .information .services .box-container .box{
+                flex:1 1 17px;
+                text-align: center;
+                border-radius: 10px;
+                padding:20px;
+                background: var(--light-bg);
+              }
+
+              .container .information .services .box-container .box img{
+                height: 50px;
+                margin-bottom: 10px;
+              }
+
+              .container .information .services .box-container .box h3{
+                font-size: 15px;
+                color:var(--light-color);
+              }
+
+              .container .information .skills .box-container{
+                display: flex;
+                flex-wrap: wrap;
+                gap:15px;
+              }
+
+              .container .information .skills .box-container .box{
+                flex:1 1 300px;
+              }
+
+              .container .information .skills .box-container .box .progress h3{
+                padding: 10px 0;
+                display: flex;
+                justify-content: space-between;
+                color:var(--black);
+                font-size: 15px;
+              }
+
+              .container .information .skills .box-container .box .progress h3 span{
+                color:var(--light-color);
+              }
+
+              .container .information .skills .box-container .box .progress .bar{
+                overflow: hidden;
+                border-radius: 50px;
+                height: 10px;
+                background: var(--light-bg);
+              }
+
+              .container .information .skills .box-container .box .progress .bar span{
+                background: var(--blue);
+                height: 100%;
+                display: block;
+                border-radius: 50px;
+              }
+
+
+              .container .information .experience{
+                margin:20px 0;
+              }
+
+              .container .information .experience .box-container{
+                display: flex;
+                flex-wrap: wrap;
+                gap:15px;
+              }
+
+              .container .information .experience .box-container .box{
+                padding:20px;
+                border-radius: 5px;
+                flex:1 1 350px;
+                background: var(--light-bg);
+              }
+
+              .container .information .experience .box-container .box span{
+                color:var(--blue);
+                font-size: 15px;
+              }
+
+              .container .information .experience .box-container .box h3{
+                color:var(--black);
+                font-size: 17px;
+                padding:5px 0;
+              }
+
+              .container .information .experience .box-container .box p{
+                color:var(--light-color);
+                line-height: 2;
+                font-size: 13px;
+              }
+
+              .container .information .contact .box-container{
+                display: flex;
+                flex-wrap: wrap;
+                gap:15px;
+              }
+
+              .container .information .contact .box-container .box{
+                flex: 1 1 200px;
+                display: flex;
+                align-self: flex-start;
+                gap:10px;
+              }
+
+              .container .information .contact .box-container .box i{
+                height: 40px;
+                width: 40px;
+                line-height: 40px;
+                font-size: 15px;
+                border-radius: 50%;
+                background: var(--blue);
+                color:var(--white);
+                text-align: center;
+              }
+
+              .container .information .contact .box-container .box h3{
+                font-size: 17px;
+                color:var(--black);
+                padding-bottom: 5px;
+              }
+
+              .container .information .contact .box-container .box p{
+                font-size: 14px;
+                color:var(--light-color);
+                line-height: 2;
+              }
+
+              @media (max-width:1200px) {
+                
+                .container{
+                  flex-flow: column;
+                  padding:20px;
+                  justify-content: center;
+                }
+
+                .container .profile{
+                  position: static;
+                  border-radius: 5px;
+                  box-shadow: var(--box-shadow);
+                  padding:20px;
+                  border-right: none;
+                  margin:0 auto;
+                  margin-bottom: 15px;
+                }
+
+                .container .information{
+                  border-radius: 5px;
+                  box-shadow: var(--box-shadow);
+                  padding:20px;
+                }
+
+              }
+
+              .foto{
+                height: 150px;
+                width: 150px;
+                border-radius: 10%;
+                object-fit: cover;
+                margin-bottom: 10px;
+                margin-left: 50px;
+                margin-right: auto;
+                margin-top: 10px;
+
+              }
+
+
+                            
+              footer {
+                background-color: linear-gradient(45deg, rgb(238, 93, 9), var(--blue));
+                position: relative;
+                width: 100%;
+                bottom: 0;
+                z-index: 2;
+                margin-top: -1px;
+              }
+
+              footer p {
+                font-size: 13px;
+                color: #343434;
+                margin: 0px;
+                padding: 25px 0px;
+                text-align: center;
+                font-weight: 400;
+              }
+
+              footer p em {
+                font-style: normal;
+                font-weight: 500;
+              }
+
+              footer a {
+                color: #343434;
+              }
+
+
+              @media (max-width:450px){
+
+                .container .profile{
+                  width: 100%;
+                }
+
+                .container .profile .btn{
+                  width: 100%;
+                }
+
+                .container .information .about p{
+                  font-size: 12px;
+                }
+
+                .container .information .experience .box-container .box p{
+                  font-size: 12px;
+                }
+              }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="profile">
+        <img src="images/licin.jpeg" alt="">
+        <h3>Theresia Fam Licin</h3>
+        <p>My Profile Catholic </p>
+        <div class="share">
+            <a href="https://www.facebook.com/fam.l.cin" target="_blank"  class="fab fa-facebook-f"></a>
+            <a href="https://www.instagram.com/famlicin75/" target="_blank" class="fab fa-instagram"></a>
+           
+        </div>
+        <div class="buttons">
+            <a href="https://katolisitas.org/" class="btn" target="_blank">Katolisitas</a>
+            <a href="http://www.miracolieucaristici.org/en/liste/list.html" class="btn" target="_blank">Eucharistic</a>
+        </div>
+    </div>
+
+    <div class="information">
+
+        <div class="about">
+            <h3 class="title">CIN 范麗珍 | "URBI ET ORBI" 💖 KASIH PENGHARAPAN</h3>
+            <p>Kata “Urbi et Orbi” (all’urbe e all’orbe) berasal dari frase Bahasa Latin, yang berarti kota Roma dan dunia. Jadi secara singkat dan sederhana berkat “Urbi et Orbi” adalah berkat apostolik Paus untuk kota Roma dan untuk seluruh dunia. Atau lebih sederhana lagi untuk semua orang.
+              <p>Berkat “Urbi et Orbi” adalah berkat yang tidak dapat dilakukan oleh uskup lain. Berkat ini menjadi “milik” khusus Paus sebagai Uskup Roma dan Pemimpin tertinggi Gereja Universal. Paus biasanya memberikan berkat “Urbi et Orbi” pada tiga kesempatan: Hari Raya Natal, Hari Raya Paskah dan sesaat setelah terpilih menjadi Paus.</p>
+              <p>Sedangkan apa yang terjadi pada Jumat, 27 Maret 2020, adalah sesuatu yang bersifat “esktraordinari” dalam kaitan dengan Pandemi Covid-19 (Pandemi: Yunani-Pan-demos: semua rakyat/semua manusia).
+              Bisa dikatakan bahwa berkat “Urbi et Orbi” dalam situasi darurat Pandemi Covid-19 ini unik dalam sejarah dan belum pernah terjadi sebelumnya. Sejak mendiang Paus Yohanes Paulus II, Paus biasa mengawalinya dengan membawakan pidato (renungan) pribadinya bersama-sama dengan berkat “Urbi et Orbi” dan doa kuno yang diucapkan dalam bahasa Latin.</p>
+              <p>Praktik yang sama diteruskan oleh dua Paus berikutnya: Benediktus XVI dan Fransiskus. Dimana mereka memberikan pidato-pidato (renungan) penting bersama dengan berkat “Urbi et Orbi”. </p>
+              <span>Sumber:</span><a href="https://gardamalaka.com/2020/03/29/umat-katolik-harus-tahu-makna-berkat-urbi-et-orbi-dan-indulgensi-penuh/" target="_blank"> Gardamalaka</a>
+
+        </div>
+
+        <div class="services">
+            <h3 class="title"><a href="galeri.html" target="_blank">Click Here to My Gallery</a> </h3>
+            <div class="box-container">
+                <div class="box">
+                    <img src="images/jesus.png" alt="">
+                    <h3>Tuhan Yesus</h3>
+                </div>
+                <div class="box">
+                    <img src="images/maria.png" alt="">
+                    <h3>Bunda Maria</h3>
+                </div>
+                <div class="box">
+                    <img src="images/icon-3.png" alt="">
+                    <h3>Papal Emblem</h3>
+                </div>
+                <div class="box">
+                    <img src="images/icon-4.png" alt="">
+                    <h3>Paus Bendictus XVI</h3>
+                </div>
+                <div class="box">
+                    <img src="images/icon-5.png" alt="">
+                    <h3>Rosario</h3>
+                </div>
+                <div class="box">
+                    <img src="images/licin.jpeg" alt="">
+                    <h3>Theresia Fam Licin</h3>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="experience">
+            <h3 class="title"><marquee behavior="alternate">Peristiwa-Peristiwa Doa Rosario Suci</marquee></h3>
+            <div class="box-container">
+                <div class="box">
+                    <span>Didoakan pada hari Senin, Sabtu, dan selama masa Adven dan Natal.</span>
+                    <h3>Peristiwa-peristiwa Gembira</h3>
+                    <p>- Maria Menerima Kabar Gembira Dari Malaikat Gabriel (Lukas 1:26-38).</p>
+                    <p>- Maria mengunjungi Elisabet, saudarinya (Lukas 1:39-45).</p>
+                    <p>- Yesus dilahirkan di Bethlehem (Lukas 2:1-7).</p>
+                    <p>- Yesus dipersembahkan dalam Bait Allah (Lukas 2:22-40).</p>
+                    <p>- Yesus diketemukan dalam Bait Allah (Lukas 2:41-52).</p>
+                    <img class="foto" src="images/file.jpg">
+                </div>  
+
+                <div class="box">
+                  <span>Didoakan pada hari Selasa, Jumat, dan selama Masa Prapaskah.</span>
+                  <h3>Peristiwa-peristiwa Sedih</h3>
+                  <p>- Yesus berdoa kepada Bapa-Nya di surga dalam sakratul maut (Lukas 22:39-46)..</p>
+                  <p>- Yesus di dera (Yohanes 19:1).</p>
+                  <p>- Yesus dimahkotai duri (Yohanes 19:2-3).</p>
+                  <p>- Yesus memanggul salib-Nya (ke Gunung Kalvari) (Lukas 22:26-32).</p>
+                  <p>- Yesus wafat di salib (Lukas 23:44-49).</p>
+                  <img class="foto" src="images/salib.jpg">
+              </div>  
+
+
+                <div class="box">
+                    <span>Didoakan pada hari Rabu, Minggu, dan selama masa Paskah.</span>
+                    <h3>Peristiwa-peristiwa Mulia</h3>
+                    <p>- Yesus bangkit dari kematian (Lukas 24:1-12).</p>
+                    <p>- Yesus naik ke surga (Lukas 24:50-53).</p>
+                    <p>- Roh Kudus turun atas para rasul (Kisah Para Rasul 2:1-13).</p>
+                    <p>- Maria diangkat ke surga (1 Korintus 15:23; Denzinger-Schönmetzer 3903).</p>
+                    <p>- Maria dimahkotai di surga (Wahyu 12:1, Denzinger-Schönmetzer 3913-3917).</p>
+                    <img class="foto" src="images/roh.jpg">
+                </div>
+                <div class="box">
+                    <span>Didoakan pada hari Kamis.</span>
+                    <h3>Peristiwa-peristiwa Terang</h3>
+                    <p>- Yesus di baptis di Sungai Yordan (Matius 3:16-17)</p>
+                    <p>- Yesus menyatakan diri-Nya dalam pesta pernikahan di Kana (Yohanes 2:11)</p>
+                    <p>- Yesus memberitakan Kerajaan Allah dan menyerukan pertobatan (Matius 4:17-23)</p>
+                    <p>- Yesus menampakkan kemuliaan-Nya (Matius 17:2-5)</p>
+                    <p>- Yesus menetapkan Ekaristi (Markus 14:22-24)</p>
+                    <img class="foto" src="images/misa.jpg">
+                </div>
+            </div>
+        </div>
+
+        <div class="contact">
+            <h3 class="title">contact info</h3>
+            <div class="box-container">
+                <div class="box">
+                    <i class="fas fa-map"></i>
+                    <div class="info">
+                        <h3>my address</h3>
+                        <p>Jakarta-Indonesia</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fas fa-phone"></i>
+                    <div class="info">
+                        <h3>my number</h3>
+                        <p>+62813-1117-4624</p>
+                       
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info">
+                        <h3>my email</h3>
+                        <p>fam.l.cin@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+  <p>Copyright &copy; 2021 Fam_Licin 
+                        
+  | Designed by <em>@nsis</em></p>
+</footer>    
+</body>
+</html>
